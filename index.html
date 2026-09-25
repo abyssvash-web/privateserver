@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HASHIRA ESPORTS - Honor Builds Strength</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Orbitron & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#E50914',
+                            crimson: '#990000',
+                            dark: '#0B0B0E',
+                            card: '#141419',
+                            cardHover: '#1A1A22',
+                            glow: '#FF1E27',
+                        }
+                    },
+                    boxShadow: {
+                        'neon-red': '0 0 20px rgba(229, 9, 20, 0.6), 0 0 40px rgba(229, 9, 20, 0.2)',
+                        'neon-hover': '0 0 30px rgba(255, 30, 39, 0.8), 0 0 60px rgba(229, 9, 20, 0.4)',
+                        'card-glow': '0 10px 30px -10px rgba(229, 9, 20, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0B0E;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-hashira {
+            background-image: linear-gradient(to bottom, rgba(11, 11, 14, 0.75), rgba(11, 11, 14, 0.95)), url('Hasirabg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 15px rgba(229, 9, 20, 0.7);
+        }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.6));
+            transition: filter 0.3s ease;
+        }
+
+        .logo-glow:hover {
+            filter: drop-shadow(0 0 25px rgba(255, 30, 39, 0.9));
+        }
+
+        /* Glassmorphism Navigation */
+        .nav-glass {
+            background: rgba(11, 11, 14, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 9, 20, 0.2);
+        }
+
+        /* Custom Card Border Effects */
+        .esports-card {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .esports-card:hover {
+            border-color: rgba(229, 9, 20, 0.8);
+            transform: translateY(-6px);
+        }
+    </style>
+</head>
+<body class="bg-hashira min-h-screen flex flex-col justify-between selection:bg-brand-red selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 nav-glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <img src="Hasiralogo.png" alt="Hashira Esports Logo" class="h-12 w-auto object-contain logo-glow rounded">
+                <span class="font-heading font-black text-xl tracking-wider text-white group-hover:text-brand-red transition-colors">
+                    HASHIRA <span class="text-brand-red">ESPORTS</span>
+... (254 lines left)

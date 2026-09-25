@@ -50,7 +50,7 @@
         }
 
         .bg-hashira {
-            background-image: linear-gradient(to bottom, rgba(11, 11, 14, 0.75), rgba(11, 11, 14, 0.95)), url('Hasirabg.png');
+            background-image: linear-gradient(to bottom, rgba(11, 11, 14, 0.75), rgba(11, 11, 14, 0.95)), url('bpbg.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -95,7 +95,260 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="#home" class="flex items-center gap-3 group">
-                <img src="Hasiralogo.png" alt="Hashira Esports Logo" class="h-12 w-auto object-contain logo-glow rounded">
+                <img src="bplogo.png" alt="Hashira Esports Logo" class="h-12 w-auto object-contain logo-glow rounded">
                 <span class="font-heading font-black text-xl tracking-wider text-white group-hover:text-brand-red transition-colors">
                     HASHIRA <span class="text-brand-red">ESPORTS</span>
-... (254 lines left)
+                </span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-heading text-sm uppercase tracking-wider">
+                <a href="#home" class="text-gray-300 hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">Home</a>
+                <a href="#games" class="text-gray-300 hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">Games</a>
+                <a href="#discord" class="text-gray-300 hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">Discord</a>
+                <a href="#about" class="text-gray-300 hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">About Us</a>
+            </nav>
+
+            <!-- Discord Quick Join CTA -->
+            <div class="hidden sm:block">
+                <a href="https://discord.gg/6Fa5DG9gns" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading text-xs uppercase font-bold px-5 py-2.5 rounded-lg shadow-neon-red hover:shadow-neon-hover transition-all duration-300 transform hover:-translate-y-0.5">
+                    <i class="fa-brands font-bold text-base fa-discord"></i>
+                    <span>Join Server</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-brand-red/30 px-4 pt-2 pb-6 space-y-3 font-heading uppercase text-sm">
+            <a href="#home" class="block py-2 text-gray-300 hover:text-brand-red border-b border-gray-800">Home</a>
+            <a href="#games" class="block py-2 text-gray-300 hover:text-brand-red border-b border-gray-800">Games</a>
+            <a href="#discord" class="block py-2 text-gray-300 hover:text-brand-red border-b border-gray-800">Discord</a>
+            <a href="#about" class="block py-2 text-gray-300 hover:text-brand-red border-b border-gray-800">About Us</a>
+            <a href="https://discord.gg/6Fa5DG9gns" target="_blank" class="flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-bold py-3 rounded-lg shadow-neon-red mt-4">
+                <i class="fa-brands fa-discord"></i> Join Discord
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[90vh] flex items-center justify-center text-center px-4 py-20">
+            <div class="max-w-4xl mx-auto flex flex-col items-center">
+                <!-- Glowing Main Logo -->
+                <div class="relative mb-6 group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-red to-red-600 rounded-full blur-xl opacity-50 group-hover:opacity-80 transition duration-500"></div>
+                    <img src="bplogo.png" alt="Hashira Esports Big Logo" class="relative w-48 h-48 sm:w-64 sm:h-64 object-contain rounded-2xl shadow-2xl logo-glow">
+                </div>
+
+                <!-- Main Tagline & Title -->
+                <h1 class="font-heading font-black text-4xl sm:text-6xl md:text-7xl tracking-wider uppercase mb-3 text-white">
+                    HASHIRA <span class="text-brand-red text-glow">ESPORTS</span>
+                </h1>
+                
+                <p class="font-heading font-semibold text-lg sm:text-2xl tracking-widest text-gray-300 mb-8 uppercase flex items-center gap-3">
+                    <span class="h-0.5 w-8 bg-brand-red inline-block"></span>
+                    HONOR BUILDS STRENGTH
+                    <span class="h-0.5 w-8 bg-brand-red inline-block"></span>
+                </p>
+
+                <p class="text-gray-400 max-w-2xl text-base sm:text-lg mb-10 leading-relaxed">
+                    Forging champions in the competitive arena. Join our community, track our active esports rosters, and dominate the leaderboard with us.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a href="https://discord.gg/6Fa5DG9gns" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-red-600 text-white font-heading font-bold text-sm uppercase px-8 py-4 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300 transform hover:-translate-y-1">
+                        <i class="fa-brands fa-discord text-xl"></i>
+                        <span>Join Discord Community</span>
+                    </a>
+                    <a href="#games" 
+                       class="inline-flex items-center justify-center gap-2 bg-brand-card hover:bg-brand-cardHover text-white font-heading font-bold text-sm uppercase px-8 py-4 rounded-xl border border-gray-700 hover:border-brand-red transition-all duration-300">
+                        <i class="fa-solid fa-gamepad text-brand-red"></i>
+                        <span>View Active Games</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games List Section -->
+        <section id="games" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-wider mb-4">
+                    Our Competitive <span class="text-brand-red text-glow">Games</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
+                    Hashira Esports actively competes and plays in the following official servers.
+                </p>
+                <div class="w-24 h-1 bg-brand-red mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Game Cards Grid - 2 Games Only -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Game Card 1: MIR4 -->
+                <div class="esports-card bg-brand-card rounded-2xl overflow-hidden group shadow-card-glow flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 bg-gradient-to-t from-brand-card to-gray-900 relative overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 bg-brand-red/10 group-hover:bg-brand-red/20 transition-colors"></div>
+                            <i class="fa-solid fa-dragon text-7xl text-brand-red/80 group-hover:scale-110 transition-transform duration-300"></i>
+                            <span class="absolute top-4 right-4 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-heading px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+                                Active Division
+                            </span>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-heading font-bold text-3xl text-white mb-2 group-hover:text-brand-red transition-colors">MIR4</h3>
+                            <p class="text-xs font-heading text-gray-400 uppercase tracking-widest mb-4">MMORPG / Aegis Server</p>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Join our clan as we conquer valleys, engage in epic castle sieges, and dominate the realm of MIR4 Aegis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8">
+                        <a href="https://www.official-aegis.com" target="_blank" rel="noopener noreferrer" 
+                           class="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-sm uppercase px-6 py-3.5 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>Visit Official Website</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Game Card 2: Ran Online -->
+                <div class="esports-card bg-brand-card rounded-2xl overflow-hidden group shadow-card-glow flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 bg-gradient-to-t from-brand-card to-gray-900 relative overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 bg-brand-red/10 group-hover:bg-brand-red/20 transition-colors"></div>
+                            <i class="fa-solid fa-khanda text-7xl text-brand-red/80 group-hover:scale-110 transition-transform duration-300"></i>
+                            <span class="absolute top-4 right-4 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-heading px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+                                Active Guild
+                            </span>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white mb-2 group-hover:text-brand-red transition-colors">RAN ONLINE</h3>
+                            <p class="text-xs font-heading text-gray-400 uppercase tracking-widest mb-4">Classic School Action MMORPG</p>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Battling for campus supremacy in Gods Ran EP7. Representing Hashira in Club Wars and Tyranny.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8">
+                        <a href="https://godsranep7.playran.network" target="_blank" rel="noopener noreferrer" 
+                           class="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-sm uppercase px-6 py-3.5 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>Visit Official Website</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Discord Community Banner -->
+        <section id="discord" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="relative bg-gradient-to-r from-brand-card via-gray-900 to-brand-card border border-brand-red/40 rounded-3xl p-8 sm:p-14 overflow-hidden shadow-2xl">
+                <!-- Decorative Background Glow -->
+                <div class="absolute top-0 right-0 -mr-16 -mt-16 w-72 h-72 bg-brand-red/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-72 h-72 bg-brand-red/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="text-center lg:text-left max-w-2xl">
+                        <div class="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red border border-brand-red/30 px-4 py-1.5 rounded-full text-xs font-heading font-bold uppercase mb-4">
+                            <i class="fa-brands fa-discord text-base"></i> Official Community Hub
+                        </div>
+                        <h2 class="font-heading font-black text-3xl sm:text-5xl uppercase tracking-wider text-white mb-4">
+                            JOIN THE <span class="text-brand-red text-glow">HASHIRA SANCTUARY</span>
+                        </h2>
+                        <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                            Connect with fellow gamers, find scrim partners, receive live tournament updates, and get direct access to official team tryout announcements!
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto shrink-0">
+                        <a href="https://discord.gg/6Fa5DG9gns" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-red-600 text-white font-heading font-bold text-base uppercase px-8 py-5 rounded-2xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-discord text-2xl"></i>
+                            <span>Connect Discord</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+            <h2 class="font-heading font-black text-3xl sm:text-4xl uppercase tracking-wider mb-6">
+                ABOUT <span class="text-brand-red">HASHIRA ESPORTS</span>
+            </h2>
+            <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8">
+                Founded with a vision of passion, discipline, and competitive dominance, **Hashira Esports** stands as a pillar of strength in the gaming landscape. Guided by our core belief—<strong class="text-white">"HONOR BUILDS STRENGTH"</strong>—we aim to nurture top esports talent, foster a positive gaming community, and compete at peak performance across multiple competitive games.
+            </p>
+            <div class="flex justify-center items-center gap-8 text-2xl text-gray-400">
+                <div class="flex flex-col items-center">
+                    <span class="font-heading font-bold text-3xl text-brand-red">100%</span>
+                    <span class="text-xs uppercase font-heading text-gray-500 mt-1">Dedication</span>
+                </div>
+                <div class="h-8 w-px bg-gray-800"></div>
+                <div class="flex flex-col items-center">
+                    <span class="font-heading font-bold text-3xl text-brand-red">6+</span>
+                    <span class="text-xs uppercase font-heading text-gray-500 mt-1">Game Divisions</span>
+                </div>
+                <div class="h-8 w-px bg-gray-800"></div>
+                <div class="flex flex-col items-center">
+                    <span class="font-heading font-bold text-3xl text-brand-red">24/7</span>
+                    <span class="text-xs uppercase font-heading text-gray-500 mt-1">Community Hub</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-brand-dark/90 border-t border-gray-800/80 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            
+            <div class="flex items-center gap-3">
+                <img src="bplogo.png" alt="Hashira Logo Small" class="h-10 w-auto rounded logo-glow">
+                <div>
+                    <span class="font-heading font-bold text-lg text-white tracking-wider block">HASHIRA ESPORTS</span>
+                    <span class="text-xs text-gray-500">Honor Builds Strength</span>
+                </div>
+            </div>
+
+            <p class="text-xs text-gray-500">
+                &copy; 2026 Hashira Esports. All rights reserved.
+            </p>
+
+            <!-- Social Media Icons -->
+            <div class="flex items-center space-x-5 text-gray-400">
+                <a href="https://discord.gg/6Fa5DG9gns" target="_blank" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking any nav link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

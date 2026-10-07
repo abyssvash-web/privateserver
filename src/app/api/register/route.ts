@@ -124,7 +124,8 @@ export async function POST(req: Request) {
 
     // Step B — submit the registration to the auth endpoint.
     const headers: Record<string, string> = {
-      "content-type": "application/json",
+  "content-type": "application/json",
+  origin: "https://api.astymir.com",
     };
     if (cookieHeader) headers.cookie = cookieHeader;
 

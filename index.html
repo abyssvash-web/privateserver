@@ -12,8 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-    <!-- Cloudflare Turnstile Script -->
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <script>
         tailwind.config = {
@@ -113,7 +111,7 @@
 
             <!-- Discord Quick Join CTA -->
             <div class="hidden sm:block">
-                <a href="https://discord.gg/g22pR3ttTN" target="_blank" rel="noopener noreferrer" 
+                <a href="https://discord.gg/6Fa5DG9gns" target="_blank" rel="noopener noreferrer" 
                    class="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading text-xs uppercase font-bold px-5 py-2.5 rounded-lg shadow-neon-red hover:shadow-neon-hover transition-all duration-300 transform hover:-translate-y-0.5">
                     <i class="fa-brands font-bold text-base fa-discord"></i>
                     <span>Join Server</span>
@@ -191,7 +189,7 @@
                 <div class="w-24 h-1 bg-brand-red mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Game Cards Grid -->
+            <!-- Game Cards Grid - 4 Games Only -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 
                 <!-- Game Card 1: OFFICIAL AEGIS -->
@@ -248,7 +246,7 @@
                     </div>
                 </div>
 
-                <!-- Game Card 3: ROM REMEMBER OF MAJESTY -->
+                <!-- Game Card 3: ROM REMEMBER OF MEJESTY -->
                 <div class="esports-card bg-brand-card rounded-2xl overflow-hidden group shadow-card-glow flex flex-col justify-between">
                     <div>
                         <div class="h-52 bg-gradient-to-t from-brand-card to-gray-900 relative overflow-hidden flex items-center justify-center">
@@ -375,14 +373,8 @@
                         </div>
                     </div>
 
-                    <!-- Cloudflare Turnstile Captcha Widget -->
-                    <!-- PALITAN ANG YOUR_TURNSTILE_SITE_KEY NG IYONG TURNSTILE SITE KEY -->
-                    <div class="my-4 flex justify-center">
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAAFQRbuU_MIa-4PIj" data-theme="dark"></div>
-                    </div>
-
                     <button type="submit" id="astral-create-account"
-                            class="mt-4 w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 disabled:bg-gray-700 disabled:text-gray-400 text-white font-heading font-bold text-sm uppercase px-6 py-3.5 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300 disabled:shadow-none">
+                            class="mt-6 w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 disabled:bg-gray-700 disabled:text-gray-400 text-white font-heading font-bold text-sm uppercase px-6 py-3.5 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300 disabled:shadow-none">
                         <i class="fa-solid fa-user-plus"></i>
                         <span>Create Account</span>
                     </button>
@@ -430,13 +422,13 @@
             <h2 class="font-heading font-black text-3xl sm:text-4xl uppercase tracking-wider mb-6">
                 ABOUT <span class="text-brand-red">BEST PRIVATE GAMES</span>
             </h2>
-            <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8">
-                <strong>BEST PRIVATE GAMES</strong> is a dedicated gaming community built for players
-                who are passionate about MMORPG private servers. We bring together exciting games,
-                new adventures, and gaming communities in one place, making it easier for players
-                to discover their next world to explore. Our goal is simple: <strong>to connect players with great private servers and create
-                a community where gamers can discover, share, and enjoy new gaming experiences together.</strong>
-            </p>
+            <p>
+    <strong>BEST PRIVATE GAMES</strong> is a dedicated gaming community built for players
+    who are passionate about MMORPG private servers. We bring together exciting games,
+    new adventures, and gaming communities in one place, making it easier for players
+    to discover their next world to explore. Our goal is simple: <strong>to connect players with great private servers and create
+    a community where gamers can discover, share, and enjoy new gaming experiences together.</strong>
+</p>
             
             <div class="flex justify-center items-center gap-8 text-2xl text-gray-400">
                 <div class="flex flex-col items-center">
@@ -484,136 +476,178 @@
         </div>
     </footer>
 
-    <!-- Scripts Section -->
     <script>
         // Mobile Navigation Menu Toggle
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
+        // Close mobile menu when clicking any nav link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
-        }
+        });
 
-        // Modal Controls
+        // ==========================================
+        // ASTRAL REGISTRATION MODAL
+        // ==========================================
         const astralRegisterModal = document.getElementById('astral-register-modal');
         const astralRegisterPanel = document.getElementById('astral-register-panel');
         const astralRegisterBtn = document.getElementById('astral-register-btn');
         const astralRegisterClose = document.getElementById('astral-register-close');
         const astralRegisterBackdrop = document.getElementById('astral-register-backdrop');
+        const astralRegisterForm = document.getElementById('astral-register-form');
+        const astralRegisterMessage = document.getElementById('astral-register-message');
+        const astralCreateAccount = document.getElementById('astral-create-account');
 
-        function openModal() {
+        function openAstralRegister() {
             astralRegisterModal.classList.remove('hidden');
             astralRegisterModal.classList.add('flex');
-            setTimeout(() => {
+            astralRegisterModal.setAttribute('aria-hidden', 'false');
+
+            requestAnimationFrame(() => {
                 astralRegisterPanel.classList.remove('scale-95', 'opacity-0');
                 astralRegisterPanel.classList.add('scale-100', 'opacity-100');
-            }, 10);
+            });
+
+            document.body.classList.add('overflow-hidden');
+
+            setTimeout(() => {
+                document.getElementById('astral-username').focus();
+            }, 150);
         }
 
-        function closeModal() {
+        function closeAstralRegister() {
             astralRegisterPanel.classList.remove('scale-100', 'opacity-100');
             astralRegisterPanel.classList.add('scale-95', 'opacity-0');
+
             setTimeout(() => {
-                astralRegisterModal.classList.remove('flex');
                 astralRegisterModal.classList.add('hidden');
-            }, 300);
+                astralRegisterModal.classList.remove('flex');
+                astralRegisterModal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('overflow-hidden');
+                clearAstralMessage();
+            }, 200);
         }
 
-        if (astralRegisterBtn) astralRegisterBtn.addEventListener('click', openModal);
-        if (astralRegisterClose) astralRegisterClose.addEventListener('click', closeModal);
-        if (astralRegisterBackdrop) astralRegisterBackdrop.addEventListener('click', closeModal);
+        function showAstralMessage(message, type = 'error') {
+            astralRegisterMessage.textContent = message;
+            astralRegisterMessage.classList.remove(
+                'hidden',
+                'bg-red-500/10', 'border-red-500/30', 'text-red-300',
+                'bg-emerald-500/10', 'border-emerald-500/30', 'text-emerald-300'
+            );
 
-        // Password Visibility Toggle
-        document.querySelectorAll('[data-toggle-password]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const inputId = btn.getAttribute('data-toggle-password');
-                const input = document.getElementById(inputId);
-                const icon = btn.querySelector('i');
+            if (type === 'success') {
+                astralRegisterMessage.classList.add(
+                    'bg-emerald-500/10',
+                    'border-emerald-500/30',
+                    'text-emerald-300'
+                );
+            } else {
+                astralRegisterMessage.classList.add(
+                    'bg-red-500/10',
+                    'border-red-500/30',
+                    'text-red-300'
+                );
+            }
+        }
+
+        function clearAstralMessage() {
+            astralRegisterMessage.textContent = '';
+            astralRegisterMessage.classList.add('hidden');
+        }
+
+        astralRegisterBtn.addEventListener('click', openAstralRegister);
+        astralRegisterClose.addEventListener('click', closeAstralRegister);
+        astralRegisterBackdrop.addEventListener('click', closeAstralRegister);
+
+        // ESC closes the modal
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !astralRegisterModal.classList.contains('hidden')) {
+                closeAstralRegister();
+            }
+        });
+
+        // Show / Hide password
+        document.querySelectorAll('[data-toggle-password]').forEach(button => {
+            button.addEventListener('click', () => {
+                const input = document.getElementById(button.dataset.togglePassword);
+                const icon = button.querySelector('i');
+
                 if (input.type === 'password') {
                     input.type = 'text';
-                    icon.className = 'fa-solid fa-eye-slash';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                    button.setAttribute('aria-label', 'Hide password');
                 } else {
                     input.type = 'password';
-                    icon.className = 'fa-solid fa-eye';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                    button.setAttribute('aria-label', 'Show password');
                 }
             });
         });
 
-        // Form Submission and Next.js Backend Route Connection
-        const regForm = document.getElementById('astral-register-form');
-        const msgDiv = document.getElementById('astral-register-message');
-        const submitBtn = document.getElementById('astral-create-account');
+        // Registration form validation
+        astralRegisterForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            clearAstralMessage();
 
-        if (regForm) {
-            regForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
+            const username = document.getElementById('astral-username').value.trim();
+            const email = document.getElementById('astral-email').value.trim();
+            const password = document.getElementById('astral-password').value;
+            const confirmPassword = document.getElementById('astral-confirm-password').value;
 
-                const username = document.getElementById('astral-username').value.trim();
-                const email = document.getElementById('astral-email').value.trim();
-                const password = document.getElementById('astral-password').value;
-                const confirmPassword = document.getElementById('astral-confirm-password').value;
+            if (username.length < 3) {
+                showAstralMessage('Username must be at least 3 characters.');
+                document.getElementById('astral-username').focus();
+                return;
+            }
 
-                // Kunin ang Turnstile Token mula sa auto-generated input ng Cloudflare
-                const turnstileInput = document.querySelector('[name="cf-turnstile-response"]');
-                const turnstileToken = turnstileInput ? turnstileInput.value : '';
+            if (username.length > 32) {
+                showAstralMessage('Username must not exceed 32 characters.');
+                document.getElementById('astral-username').focus();
+                return;
+            }
 
-                if (password !== confirmPassword) {
-                    msgDiv.className = "mb-5 rounded-xl border border-red-500/50 bg-red-500/10 px-4 py-3 text-sm text-red-400 block";
-                    msgDiv.innerText = "Passwords do not match.";
-                    return;
-                }
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showAstralMessage('Please enter a valid email address.');
+                document.getElementById('astral-email').focus();
+                return;
+            }
 
-                if (!turnstileToken) {
-                    msgDiv.className = "mb-5 rounded-xl border border-red-500/50 bg-red-500/10 px-4 py-3 text-sm text-red-400 block";
-                    msgDiv.innerText = "Please complete the Captcha verification.";
-                    return;
-                }
+            if (password.length < 6) {
+                showAstralMessage('Password must be at least 6 characters.');
+                document.getElementById('astral-password').focus();
+                return;
+            }
 
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Creating Account...</span>';
+            if (password !== confirmPassword) {
+                showAstralMessage('Passwords do not match.');
+                document.getElementById('astral-confirm-password').focus();
+                return;
+            }
 
-                try {
-                    // Endpoint route call papuntang route.ts
-                    const response = await fetch('/api/register', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            username,
-                            email,
-                            password,
-                            turnstileToken
-                        })
-                    });
+            /*
+             * UI is ready, but no registration API is connected yet.
+             * A real account cannot be created from this HTML alone.
+             * Replace the section below with the official Astral registration
+             * API endpoint once its backend/API details are available.
+             */
+            showAstralMessage(
+                'Registration form is ready. The Astral account service still needs to be connected before accounts can be created.',
+                'success'
+            );
 
-                    const result = await response.json();
-
-                    if (result.ok) {
-                        msgDiv.className = "mb-5 rounded-xl border border-emerald-500/50 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-400 block";
-                        msgDiv.innerText = "Account created successfully! Welcome to Astral.";
-                        regForm.reset();
-                        if (window.turnstile) window.turnstile.reset();
-                    } else {
-                        msgDiv.className = "mb-5 rounded-xl border border-red-500/50 bg-red-500/10 px-4 py-3 text-sm text-red-400 block";
-                        msgDiv.innerText = result.kind === "field" ? result.message : "System error. Please try again later.";
-                        if (window.turnstile) window.turnstile.reset();
-                    }
-                } catch (err) {
-                    msgDiv.className = "mb-5 rounded-xl border border-red-500/50 bg-red-500/10 px-4 py-3 text-sm text-red-400 block";
-                    msgDiv.innerText = "Network error. Please check your connection.";
-                } finally {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<i class="fa-solid fa-user-plus"></i> <span>Create Account</span>';
-                }
-            });
-        }
+            // Keep the button state clear for now.
+            astralCreateAccount.disabled = false;
+        });
     </script>
 </body>
 </html>

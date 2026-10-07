@@ -14,8 +14,8 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 
-// Required public Turnstile site key. Safe to expose in the browser.
-const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
+// Cloudflare Turnstile Site Key — safe to expose in the browser.
+const TURNSTILE_SITE_KEY = "0x4AAAAAAEya8ozGNAErlhp4";
 const TURNSTILE_SCRIPT =
   "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 

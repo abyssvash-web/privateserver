@@ -78,6 +78,51 @@
             border-bottom: 1px solid rgba(229, 9, 20, 0.2);
         }
 
+
+        /* Game Artwork */
+        .game-art {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .esports-card:hover .game-art {
+            transform: scale(1.06);
+            filter: brightness(1.08);
+        }
+
+        .game-art-wrap {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            background: #101015;
+        }
+
+        .game-art-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(20, 20, 25, 0.95), rgba(20, 20, 25, 0.05) 65%);
+            pointer-events: none;
+        }
+
+        .game-status {
+            position: absolute;
+            z-index: 2;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .game-title-overlay {
+            position: absolute;
+            z-index: 2;
+            left: 1.25rem;
+            right: 1.25rem;
+            bottom: 1rem;
+        }
+
         /* Custom Card Border Effects */
         .esports-card {
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -113,7 +158,7 @@
 
             <!-- Discord Quick Join CTA -->
             <div class="hidden sm:block">
-                <a href="https://discord.gg/6Fa5DG9gns" target="_blank" rel="noopener noreferrer" 
+                <a href="https://discord.gg/V87ZwmcxbM" target="_blank" rel="noopener noreferrer" 
                    class="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading text-xs uppercase font-bold px-5 py-2.5 rounded-lg shadow-neon-red hover:shadow-neon-hover transition-all duration-300 transform hover:-translate-y-0.5">
                     <i class="fa-brands font-bold text-base fa-discord"></i>
                     <span>Join Server</span>
@@ -132,7 +177,7 @@
             <a href="#games" class="block py-2 text-gray-300 hover:text-brand-red border-b border-gray-800">Games</a>
             <a href="#discord" class="block py-2 text-gray-300 hover:text-brand-red border-b border-gray-800">Discord</a>
             <a href="#about" class="block py-2 text-gray-300 hover:text-brand-red border-b border-gray-800">About Us</a>
-            <a href="https://discord.gg/6Fa5DG9gns" target="_blank" class="flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-bold py-3 rounded-lg shadow-neon-red mt-4">
+            <a href="https://discord.gg/V87ZwmcxbM" target="_blank" class="flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-bold py-3 rounded-lg shadow-neon-red mt-4">
                 <i class="fa-brands fa-discord"></i> Join Discord
             </a>
         </div>
@@ -165,7 +210,7 @@
 
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <a href="https://discord.gg/6Fa5DG9gns" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://discord.gg/V87ZwmcxbM" target="_blank" rel="noopener noreferrer" 
                        class="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-red-600 text-white font-heading font-bold text-sm uppercase px-8 py-4 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300 transform hover:-translate-y-1">
                         <i class="fa-brands fa-discord text-xl"></i>
                         <span>Join Discord Community</span>
@@ -192,89 +237,120 @@
             </div>
 
             <!-- Game Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
                 
-                <!-- Game Card 1: NEW MIR4 -->
-                <div class="esports-card bg-brand-card rounded-2xl overflow-hidden group shadow-card-glow flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 bg-gradient-to-t from-brand-card to-gray-900 relative overflow-hidden flex items-center justify-center">
-                            <div class="absolute inset-0 bg-brand-red/10 group-hover:bg-brand-red/20 transition-colors"></div>
-                            <i class="fa-solid fa-dragon text-7xl text-brand-red/80 group-hover:scale-110 transition-transform duration-300"></i>
-                            <span class="absolute top-4 right-4 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-heading px-3 py-1 rounded-full uppercase tracking-wider font-bold">
-                                COMING SOON!
-                            </span>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-heading font-bold text-3xl text-white mb-2 group-hover:text-brand-red transition-colors">NEW MIR4</h3>
-                            <p class="text-xs font-heading text-gray-400 uppercase tracking-widest mb-4">MIR4 PRIVATE SERVER</p>
-                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                                Conquer the realm of NEW MIR4 through epic battles, fierce clan wars, and legendary sieges. Build your legacy, strengthen your clan, and rise to the top of the battlefield.
-                            </p>
+                <!-- Game Card 1: ROM REMEMBER OF MAJESTY -->
+            <div class="esports-card bg-brand-card rounded-2xl overflow-hidden group shadow-card-glow flex flex-col h-full">
+                <div>
+                    <div class="game-art-wrap">
+                        <img src="ROM.png" alt="ROM: Remember of Majesty" class="game-art"
+                             onerror="this.onerror=null;this.src='rom-banner.svg';">
+                        <span class="game-status bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-heading px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+                            ONLINE
+                        </span>
+                        <div class="game-title-overlay">
+                            <p class="text-xs font-heading text-brand-red uppercase tracking-widest font-bold mb-1">ROM PRIVATE SERVER</p>
+                            <h3 class="font-heading font-black text-2xl sm:text-3xl text-white group-hover:text-brand-red transition-colors">
+                                ROM: REMEMBER OF MAJESTY
+                            </h3>
                         </div>
                     </div>
-                    <div class="px-8 pb-8">
-                        <a href="https://discord.gg/6Fa5DG9gns" target="_blank" rel="noopener noreferrer" 
-                           class="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-sm uppercase px-6 py-3.5 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300">
-                            <i class="fa-solid fa-globe"></i>
-                            <span>JOIN DISCORD</span>
-                        </a>
+
+                    <div class="p-8">
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Forge your destiny in the world of Majesty. Battle alongside your guild, conquer powerful foes,
+                            and build your legendary legacy.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Game Card 2: Astral -->
-                <div class="esports-card bg-brand-card rounded-2xl overflow-hidden group shadow-card-glow flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 bg-gradient-to-t from-brand-card to-gray-900 relative overflow-hidden flex items-center justify-center">
-                            <div class="absolute inset-0 bg-brand-red/10 group-hover:bg-brand-red/20 transition-colors"></div>
-                            <i class="fa-solid fa-khanda text-7xl text-brand-red/80 group-hover:scale-110 transition-transform duration-300"></i>
-                            <span class="absolute top-4 right-4 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-heading px-3 py-1 rounded-full uppercase tracking-wider font-bold">
-                                ONLINE
-                            </span>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white mb-2 group-hover:text-brand-red transition-colors">ASTRAL</h3>
-                            <p class="text-xs font-heading text-gray-400 uppercase tracking-widest mb-4">PLAY-ASTRAL</p>
-                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                                Conquering the realm of ASTRAL through epic battles and fierce competition. Building a powerful community and creating legends together.
-                            </p>
+                <div class="px-8 pb-8 mt-auto grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <a href="https://discord.gg/V87ZwmcxbM" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-xs uppercase px-4 py-3 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300">
+                        <i class="fa-brands fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                    <a href="https://rom.ym.games/en/" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-brand-red/10 text-white font-heading font-bold text-xs uppercase px-4 py-3 rounded-xl border border-gray-700 hover:border-brand-red transition-all duration-300">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Website</span>
+                    </a>
+                    <a href="https://load.yoodream.com/game?ch=NTY3MmJyNDQyYnI" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-brand-red/10 text-white font-heading font-bold text-xs uppercase px-4 py-3 rounded-xl border border-gray-700 hover:border-brand-red transition-all duration-300">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Game Card 2: ASTRAL -->
+            <div class="esports-card bg-brand-card rounded-2xl overflow-hidden group shadow-card-glow flex flex-col h-full">
+                <div>
+                    <div class="game-art-wrap">
+                        <img src="ASTRAL.PNG" alt="ASTRAL" class="game-art"
+                             onerror="this.onerror=null;this.src='astral-banner.svg';">
+                        <span class="game-status bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-heading px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+                            ONLINE
+                        </span>
+                        <div class="game-title-overlay">
+                            <p class="text-xs font-heading text-brand-red uppercase tracking-widest font-bold mb-1">PLAY-ASTRAL</p>
+                            <h3 class="font-heading font-black text-2xl sm:text-3xl text-white group-hover:text-brand-red transition-colors">
+                                ASTRAL
+                            </h3>
                         </div>
                     </div>
-                    <div class="px-8 pb-8">
-                        <button type="button" id="astral-register-btn"
-                           class="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-sm uppercase px-6 py-3.5 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300 transform hover:-translate-y-0.5">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <span>Register</span>
-                        </button>
+
+                    <div class="p-8">
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Conquer the realm of ASTRAL through epic battles and fierce competition.
+                            Build a powerful community and create legends together.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Game Card 3: ROM REMEMBER OF MAJESTY -->
-                <div class="esports-card bg-brand-card rounded-2xl overflow-hidden group shadow-card-glow flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 bg-gradient-to-t from-brand-card to-gray-900 relative overflow-hidden flex items-center justify-center">
-                            <div class="absolute inset-0 bg-brand-red/10 group-hover:bg-brand-red/20 transition-colors"></div>
-                            <i class="fa-solid fa-dragon text-7xl text-brand-red/80 group-hover:scale-110 transition-transform duration-300"></i>
-                            <span class="absolute top-4 right-4 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-heading px-3 py-1 rounded-full uppercase tracking-wider font-bold">
-                                ONLINE!
-                            </span>
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-heading font-bold text-3xl text-white mb-2 group-hover:text-brand-red transition-colors">ROM REMEMBER OF MAJESTY</h3>
-                            <p class="text-xs font-heading text-gray-400 uppercase tracking-widest mb-4">ROM PRIVATE SERVER</p>
-                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                                Forge your destiny in the world of Majesty. Battle alongside your guild, conquer powerful foes, and build your legendary legacy.
-                            </p>
+                <div class="px-8 pb-8 mt-auto">
+                    <button type="button" id="astral-register-btn"
+                       class="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-sm uppercase px-6 py-3.5 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Register</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Card 3: NEW MIR4 -->
+            <div class="esports-card bg-brand-card rounded-2xl overflow-hidden group shadow-card-glow flex flex-col h-full">
+                <div>
+                    <div class="game-art-wrap">
+                        <img src="mir4.jpg" alt="NEW MIR4" class="game-art"
+                             onerror="this.onerror=null;this.src='mir4-banner.svg';">
+                        <span class="game-status bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-heading px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+                            COMING SOON
+                        </span>
+                        <div class="game-title-overlay">
+                            <p class="text-xs font-heading text-brand-red uppercase tracking-widest font-bold mb-1">MIR4 PRIVATE SERVER</p>
+                            <h3 class="font-heading font-black text-2xl sm:text-3xl text-white group-hover:text-brand-red transition-colors">
+                                NEW MIR4
+                            </h3>
                         </div>
                     </div>
-                    <div class="px-8 pb-8">
-                        <a href="https://discord.gg/xtsGwZrxeK" target="_blank" rel="noopener noreferrer" 
-                           class="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-sm uppercase px-6 py-3.5 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300">
-                            <i class="fa-solid fa-globe"></i>
-                            <span>Visit Official Website</span>
-                        </a>
+
+                    <div class="p-8">
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Conquer the realm of NEW MIR4 through epic battles, fierce clan wars, and legendary sieges.
+                            Build your legacy, strengthen your clan, and rise to the top of the battlefield.
+                        </p>
                     </div>
                 </div>
-                
+
+                <div class="px-8 pb-8 mt-auto">
+                    <a href="https://discord.gg/V87ZwmcxbM" target="_blank" rel="noopener noreferrer"
+                       class="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-sm uppercase px-6 py-3.5 rounded-xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300">
+                        <i class="fa-brands fa-discord"></i>
+                        <span>JOIN DISCORD</span>
+                    </a>
+                </div>
+            </div>
+
             </div>
         </section>
 
@@ -415,7 +491,7 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto shrink-0">
-                        <a href="https://discord.gg/6Fa5DG9gns" target="_blank" rel="noopener noreferrer" 
+                        <a href="https://discord.gg/V87ZwmcxbM" target="_blank" rel="noopener noreferrer" 
                            class="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-red-600 text-white font-heading font-bold text-base uppercase px-8 py-5 rounded-2xl shadow-neon-red hover:shadow-neon-hover transition-all duration-300 transform hover:-translate-y-1">
                             <i class="fa-brands fa-discord text-2xl"></i>
                             <span>Connect Discord</span>
@@ -446,7 +522,7 @@
                 <div class="h-8 w-px bg-gray-800"></div>
                 <div class="flex flex-col items-center">
                     <span class="font-heading font-bold text-3xl text-brand-red">3</span>
-                    <span class="text-xs uppercase font-heading text-gray-500 mt-1">Game Categories</span>
+                    <span class="text-xs uppercase font-heading text-gray-500 mt-1">Featured Games</span>
                 </div>
                 <div class="h-8 w-px bg-gray-800"></div>
                 <div class="flex flex-col items-center">
@@ -475,7 +551,7 @@
 
             <!-- Social Media Icons -->
             <div class="flex items-center space-x-5 text-gray-400">
-                <a href="https://discord.gg/6Fa5DG9gns" target="_blank" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://discord.gg/V87ZwmcxbM" target="_blank" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-discord"></i></a>
                 <a href="#" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#" class="hover:text-brand-red transition-colors text-lg"><i class="fa-brands fa-youtube"></i></a>
